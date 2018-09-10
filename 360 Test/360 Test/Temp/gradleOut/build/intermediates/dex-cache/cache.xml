@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\Equifax\.gradle\caches\transforms-1\files-1.1\gvr-permissionsupport-release.aar\76decb8b59e22a3c0ae9546891c5a476\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="19"
+        optimize="true"
+        revision="28.0.2"
+        sha1="89a665d716c3d6b2922d194ecd5aec7ae45beb3f">
+        <dex dex="C:\Users\Equifax\Documents\360 Test\Temp\gradleOut\build\intermediates\transforms\preDex\release\5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Equifax\.gradle\caches\transforms-1\files-1.1\unitygvr.aar\0c0038ea350ac4f6b9d11d1f705c8572\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="19"
+        optimize="true"
+        revision="28.0.2"
+        sha1="36e70259b99d30e8bd89f2246a70d44a53cb309f">
+        <dex dex="C:\Users\Equifax\Documents\360 Test\Temp\gradleOut\build\intermediates\transforms\preDex\release\7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Equifax\.gradle\caches\transforms-1\files-1.1\gvr-keyboard.aar\341d675866a399d28a787eec3bda5b35\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="19"
+        optimize="true"
+        revision="28.0.2"
+        sha1="9dbb83f0fca00962e516ec6a098b69c7a07d0bf8">
+        <dex dex="C:\Users\Equifax\Documents\360 Test\Temp\gradleOut\build\intermediates\transforms\preDex\release\3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Equifax\.gradle\caches\transforms-1\files-1.1\gvr.aar\d92c6064601589a2ed93428e47a17e2f\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="19"
+        optimize="true"
+        revision="28.0.2"
+        sha1="3c3b58094572bd9cc7a20c752e08897502036b14">
+        <dex dex="C:\Users\Equifax\Documents\360 Test\Temp\gradleOut\build\intermediates\transforms\preDex\release\6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Equifax\.gradle\caches\transforms-1\files-1.1\gvr-keyboardsupport-release.aar\6935487a4b4b7088369ea65c6f9bda61\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="19"
+        optimize="true"
+        revision="28.0.2"
+        sha1="0e73b79f6ee536f7b2d00367f0a55dce11a3a61d">
+        <dex dex="C:\Users\Equifax\Documents\360 Test\Temp\gradleOut\build\intermediates\transforms\preDex\release\4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Equifax\Documents\360 Test\Temp\gradleOut\libs\libprotobuf-java-nano.jar"
+        jumboMode="false"
+        min-sdk-version="19"
+        optimize="true"
+        revision="28.0.2"
+        sha1="fcd53f117550c58490f29c2e27afca051626260d">
+        <dex dex="C:\Users\Equifax\Documents\360 Test\Temp\gradleOut\build\intermediates\transforms\preDex\release\1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Equifax\Documents\360 Test\Temp\gradleOut\libs\unity-classes.jar"
+        jumboMode="false"
+        min-sdk-version="19"
+        optimize="true"
+        revision="28.0.2"
+        sha1="d20747339cb26185f9d4ec2a6b3583d18097118d">
+        <dex dex="C:\Users\Equifax\Documents\360 Test\Temp\gradleOut\build\intermediates\transforms\preDex\release\2.jar" />
+    </item>
+
+</items>
