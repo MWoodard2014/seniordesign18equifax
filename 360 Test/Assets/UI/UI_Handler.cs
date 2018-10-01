@@ -4,6 +4,7 @@ using UnityEditor;
 using UnityEngine.UI;
 using UnityEngine.Video;
 using UnityEngine.XR;
+using UnityEngine.EventSystems;
 
 public class UI_Handler : MonoBehaviour {
 
@@ -24,9 +25,10 @@ public class UI_Handler : MonoBehaviour {
 	*/
 	public Canvas canvas;
 	public GameObject videoSphere;
-	private VideoPlayer videoPlayer;
+	public VideoPlayer videoPlayer;
 	private VideoSource videoSource;
 	public GvrReticlePointer reticlePointer;
+	public Image VRUI;
 
 	//------------------------------------------------------------
 	// LeftBannerHandler and the associated IEnumerator handes the
@@ -74,61 +76,20 @@ public class UI_Handler : MonoBehaviour {
 		canvas.gameObject.SetActive(false);
 		videoSphere.gameObject.SetActive(true);
 		GVREmu.gameObject.SetActive(true);
-		StartCoroutine(playVideo());
-		// videoPlayer.gameObject.SetActive(true);
+		//StartCoroutine(playVideo());
+		videoPlayer.gameObject.SetActive(true);
 		ToggleVR();
 		//StartCoroutine(GazeHandler());
 	}
 
 	// IEnumerator GazeHandler(){
-	// 	if (reticlePointer.TriggerDown){
-	// 		yield return new WaitForSeconds(2);
-	// 		if (reticlePointer.TriggerDown){
-	// 			Debug.Log("TriggerDown");
-	// 		}
+	// 	if (reticlePointer.OnPointerClickDown()){
+	//
+	//
+	//
 	// 	}
 	// }
 
-	IEnumerator playVideo()
-	{
-
-			//Add VideoPlayer to the GameObject
-			videoPlayer = gameObject.AddComponent<VideoPlayer>();
-
-
-			//Disable Play on Awake for both Video and Audio
-			videoPlayer.playOnAwake = false;
-
-			//Video clip from Url
-			videoPlayer.source = VideoSource.Url;
-			videoPlayer.url = "https://youtu.be/hsvsDTKrRS4";
-
-
-			//Set Audio Output to AudioSource
-			videoPlayer.audioOutputMode = VideoAudioOutputMode.AudioSource;
-
-			//Wait until video is prepared
-			while (!videoPlayer.isPrepared)
-			{
-					yield return null;
-			}
-
-			Debug.Log("Done Preparing Video");
-			 videoPlayer.renderMode = UnityEngine.Video.VideoRenderMode.MaterialOverride;
-			GetComponent<Renderer>().material.mainTexture = videoSphere.GetTexture();
-
-			//Play Video
-			videoPlayer.Play();
-
-			Debug.Log("Playing Video");
-			while (videoPlayer.isPlaying)
-			{
-					Debug.LogWarning("Video Time: " + Mathf.FloorToInt((float)videoPlayer.time));
-					yield return null;
-			}
-
-			Debug.Log("Done Playing Video");
-	}
 
 	public void ToggleVR(){
 		if (XRSettings.loadedDeviceName == "cardboard"){
@@ -142,5 +103,30 @@ public class UI_Handler : MonoBehaviour {
 		XRSettings.LoadDeviceByName(newDevice);
 		yield return null;
 		XRSettings.enabled = true;
+	}
+
+// Update is called once per frame
+void Update () {
+	if (XRSettings.loadedDeviceName == "cardboard"){
+		reticlePointer.OnPointerClickDown();
+	}
+}
+
+public void OnPointerClickDown(){
+	Debug.Log("Pointer Click Down");
+	if(!VRUI.gameObject.activeInHierarchy){
+		StartCoroutine(DisplayVRMenu());
+		}
+}
+
+	IEnumerator DisplayVRMenu(){
+		VRUI.gameObject.SetActive(true);
+		float i = 0;
+			while (i < 1) {
+				VRUI.color = new Color(1, 1, 1, i);
+				yield return new WaitForSeconds(.1f);
+				i += .1f;
+			}
+
 	}
 }
